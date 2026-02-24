@@ -68,7 +68,17 @@ elseif (WIN32)
   list(APPEND DAPI_DEFINES WIN32 DECTALKAPI_EXPORTS _WINDOWS _USRDLL USE_CORE_DLL ACNA BLD_DECTALK_DLL ENGLISH_US ENGLISH NDEBUG AMD64)
 elseif (UNIX)
   if (APPLE)
-    list(APPEND DAPI_LINK_LIBS portaudio "-framework CoreAudio" "-framework AudioToolbox")
+    pkg_check_modules(PORTAUDIO REQUIRED portaudio-2.0)
+
+    # Create an imported target for PortAudio
+    add_library(PortAudio::PortAudio INTERFACE IMPORTED)
+
+    set_target_properties(PortAudio::PortAudio PROPERTIES
+        INTERFACE_INCLUDE_DIRECTORIES "${PORTAUDIO_INCLUDE_DIRS}"
+        INTERFACE_LINK_LIBRARIES "${PORTAUDIO_LINK_LIBRARIES} -framework CoreAudio -framework AudioToolbox"
+    )
+
+    list(APPEND DAPI_LINK_LIBS PortAudio::PortAudio)
   else()
     # Assume that non-Apple machines are Linux.
     list(APPEND DAPI_LINK_LIBS pulse-simple pulse)
