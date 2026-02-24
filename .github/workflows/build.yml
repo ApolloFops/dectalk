@@ -193,58 +193,58 @@ jobs:
             ubuntu-cmake-latest.zip
             ubuntu-cmake-latest.tar.gz
 
-  # cmake-macosx:
-  #   name: Mac OS X (cmake)
-  #   runs-on: macos-11
+  cmake-macosx:
+    name: Mac OS (cmake)
+    runs-on: macos-15
 
-  #   steps:
-  #     - name: Checkout repository
-  #       uses: actions/checkout@v6.0.2
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6.0.2
 
-  #     - name: Update Mac OS X packages
-  #       run: brew update
+      - name: Update Mac OS packages
+        run: brew update
 
-  #     - name: Install dependencies
-  #       run: brew install libtool portaudio
+      - name: Install dependencies
+        run: brew install libtool portaudio
 
-  #     - name: Run CMake
-  #       run: |
-  #         mkdir build
-  #         cd build
-  #         cmake ..
+      - name: Run CMake
+        run: |
+          mkdir build
+          cd build
+          cmake ..
 
-  #     - name: Make DECtalk
-  #       working-directory: build
-  #       run: make
+      - name: Make DECtalk
+        working-directory: build
+        run: make
 
-  #     - uses: vimtor/action-zip@v1
-  #       with:
-  #         files: build/bin/
-  #         dest: macos-universal.zip
+      - uses: vimtor/action-zip@v1
+        with:
+          files: build/bin/
+          dest: macos-universal.zip
 
-  #     - name: Create a `.tar.gz` of the build/bin/ folder.
-  #       run: tar -cvzf macos-universal.tar.gz -C build/bin/ .
+      - name: Create a `.tar.gz` of the build/bin/ folder.
+        run: tar -cvzf macos-universal.tar.gz -C build/bin/ .
 
-  #     - name: Create artifacts (.zip)
-  #       uses: actions/upload-artifact@v6.0.0
-  #       with:
-  #         name: macos-universal-zip
-  #         path: macos-universal.zip
+      - name: Create artifacts (.zip)
+        uses: actions/upload-artifact@v6.0.0
+        with:
+          name: macos-universal-zip
+          path: macos-universal.zip
 
-  #     - name: Create artifacts (.tar.gz.zip)
-  #       uses: actions/upload-artifact@v6.0.0
-  #       with:
-  #         name: macos-universal-tar
-  #         path: macos-universal.tar.gz
+      - name: Create artifacts (.tar.gz.zip)
+        uses: actions/upload-artifact@v6.0.0
+        with:
+          name: macos-universal-tar
+          path: macos-universal.tar.gz
 
-  #     - name: Release
-  #       uses: softprops/action-gh-release@v1
-  #       if: startsWith(github.ref, 'refs/tags/')
-  #       with:
-  #         draft: true
-  #         files: |
-  #           macos-universal.zip
-  #           macos-universal.tar.gz
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          draft: true
+          files: |
+            macos-universal.zip
+            macos-universal.tar.gz
 
   cmake-vs2022:
     name: Visual Studio 2022 (cmake)
