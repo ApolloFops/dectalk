@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6.0.2
 
       - name: Update Ubuntu Packages
         run: sudo apt-get update
@@ -35,13 +35,13 @@ jobs:
         run: tar -cvzf ubuntu-latest.tar.gz -C dist/ .
 
       - name: Create artifacts (.zip)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v6.0.0
         with:
           name: ubuntu-latest-zip
           path: dist/
 
       - name: Create artifacts (.tar.gz.zip)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v6.0.0
         with:
           name: ubuntu-latest-tar
           path: ubuntu-latest.tar.gz
@@ -61,7 +61,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6.0.2
 
       - name: Update Mac OS X packages
         run: brew update
@@ -85,13 +85,13 @@ jobs:
         run: tar -cvzf macos-latest.tar.gz -C dist/ .
 
       - name: Create artifacts (.zip)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v6.0.0
         with:
           name: macos-latest-zip
           path: dist/
 
       - name: Create artifacts (.tar.gz.zip)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v6.0.0
         with:
           name: macos-latest-tar
           path: macos-latest.tar.gz
@@ -127,7 +127,7 @@ jobs:
           dest: vs6-ia32.zip
 
       - name: Create artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v6.0.0
         with:
           name: vs6-ia32-zip
           path: vs6-ia32.zip
@@ -146,7 +146,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6.0.2
 
       - name: Update Ubuntu Packages
         run: sudo apt-get update
@@ -173,13 +173,13 @@ jobs:
         run: tar -cvzf ubuntu-cmake-latest.tar.gz -C build/bin/ .
 
       - name: Create artifacts (.zip)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v6.0.0
         with:
           name: ubuntu-cmake-latest-zip
           path: ubuntu-cmake-latest.zip
 
       - name: Create artifacts (.tar.gz.zip)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v6.0.0
         with:
           name: ubuntu-cmake-latest-tar
           path: ubuntu-cmake-latest.tar.gz
@@ -199,7 +199,7 @@ jobs:
 
   #   steps:
   #     - name: Checkout repository
-  #       uses: actions/checkout@v3
+  #       uses: actions/checkout@v6.0.2
 
   #     - name: Update Mac OS X packages
   #       run: brew update
@@ -226,13 +226,13 @@ jobs:
   #       run: tar -cvzf macos-universal.tar.gz -C build/bin/ .
 
   #     - name: Create artifacts (.zip)
-  #       uses: actions/upload-artifact@v3
+  #       uses: actions/upload-artifact@v6.0.0
   #       with:
   #         name: macos-universal-zip
   #         path: macos-universal.zip
 
   #     - name: Create artifacts (.tar.gz.zip)
-  #       uses: actions/upload-artifact@v3
+  #       uses: actions/upload-artifact@v6.0.0
   #       with:
   #         name: macos-universal-tar
   #         path: macos-universal.tar.gz
@@ -252,7 +252,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v6.0.2
 
       - name: Run CMake
         shell: cmd
@@ -274,7 +274,7 @@ jobs:
           dest: windows-amd64.zip
 
       - name: Create artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v6.0.0
         with:
           name: windows-amd64-zip
           path: windows-amd64.zip
@@ -293,11 +293,11 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6.0.2
 
       - uses: mymindstorm/setup-emsdk@v11
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v6.2.0
         with:
           node-version: 18
 
@@ -320,13 +320,13 @@ jobs:
         run: tar -cvzf emscripten-latest.tar.gz -C build/bin/ .
 
       - name: Create artifacts (.zip)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v6.0.0
         with:
           name: emscripten-latest-zip
           path: emscripten-latest.zip
 
       - name: Create artifacts (.tar.gz.zip)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v6.0.0
         with:
           name: emscripten-latest-tar
           path: emscripten-latest.tar.gz
