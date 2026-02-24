@@ -1,6 +1,6 @@
 add_executable(say say.c)
 target_include_directories(say PRIVATE ../../.. ${HEADER_OUTPUT_DIRECTORY})
-target_link_libraries(say PRIVATE dectalk)
+target_link_libraries(say PRIVATE dectalk iconv)
 add_executable(aclock aclock.c)
 target_include_directories(aclock PRIVATE ../../.. ${HEADER_OUTPUT_DIRECTORY})
 target_link_libraries(aclock PRIVATE dectalk)
