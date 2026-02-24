@@ -254,8 +254,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6.0.2
 
+      - name: Setup MSYS2
+        uses: msys2/setup-msys2@v2
+
       - name: Run CMake
-        shell: cmd
+        shell: msys2 {0}
         run: |
           mkdir build
           cd build
