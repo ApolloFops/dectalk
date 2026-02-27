@@ -3,6 +3,9 @@ project(dectalk)
 set(CMAKE_C_STANDARD 90)
 set(CMAKE_CXX_STANDARD 98)
 
+# Set up the GNU install directories
+include(GNUInstallDirs)
+
 set(HEADER_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/headers)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)

@@ -130,3 +130,16 @@ file(
   COPY api/ttsapi.h
   DESTINATION ${HEADER_OUTPUT_DIRECTORY}/dtk
 )
+
+install(
+  FILES osf/dtmmedefs.h
+  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/dtk
+)
+install(
+  FILES api/ttsapi.h
+  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/dtk
+)
+install(
+  TARGETS dectalk
+  DESTINATION ${CMAKE_INSTALL_LIBDIR}
+)
