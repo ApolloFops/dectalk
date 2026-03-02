@@ -660,7 +660,7 @@ unsigned int PlayAudioCallbackRoutine( HPLAY_AUDIO_T pPlayAudio,
 									  ATYPE_T aItem_1 );
 VOID DefaultTTSCallbackRoutine(LONG lParam1,
 							   LONG lParam2,
-							   DWORD dwInstanceParam,
+							   LONG dwInstanceParam,
 							   UINT uiMsg);
 
 //#ifdef WIN32
@@ -1822,7 +1822,7 @@ void ReleaseLicenseRef(int *a32_lic)
 MMRESULT TextToSpeechStartupEx( LPTTS_HANDLE_T * pphTTS,
 							   UINT uiDeviceNumber,
 							   DWORD dwDeviceOptions,
-							   VOID (*DtCallbackRoutine)(LONG,LONG,DWORD,UINT),
+							   VOID (*DtCallbackRoutine)(LONG,LONG,LONG,UINT),
 							   LONG dwTTSInstanceParameter)
 {
 
@@ -1921,7 +1921,7 @@ return TextToSpeechStartupExFonix( pphTTS,
 MMRESULT TextToSpeechStartupExFonix( LPTTS_HANDLE_T * pphTTS,
 							   UINT uiDeviceNumber,
 							   DWORD dwDeviceOptions,
-							   VOID (*DtCallbackRoutine)(LONG,LONG,DWORD,UINT),
+							   VOID (*DtCallbackRoutine)(LONG,LONG,LONG,UINT),
 							   LONG dwTTSInstanceParameter,
 #ifdef WIN32
 							   TCHAR *dictionary_file_name)
@@ -3451,7 +3451,7 @@ phTTS->uiID_Start_Message =
 MMRESULT TextToSpeechStartup( LPTTS_HANDLE_T * pphTTS,
 							 UINT uiDeviceNumber,
 							 DWORD dwDeviceOptions,
-							 VOID (*DtCallbackRoutine)(LONG,LONG,DWORD,UINT),
+							 VOID (*DtCallbackRoutine)(LONG,LONG,LONG,UINT),
 							 LONG dwTTSInstanceParameter)
 {
 	

@@ -345,10 +345,10 @@ struct TTS_HANDLE_TAG
   void (*main_lts_loop)(void *,unsigned short *);     
 #endif
 #else
-  void (*DtCallbackRoutine)(LONG,LONG,DWORD,UINT);     //New Audio Integration :After testing remove these comments
+  void (*DtCallbackRoutine)(LONG,LONG,LONG,UINT);     //New Audio Integration :After testing remove these comments
 #endif
 
-  DWORD dwTTSInstanceParameter;    //New Audio Integration
+  LONG dwTTSInstanceParameter;    //New Audio Integration
 #ifdef WIN32
   HMUTEX_T hmxCallback;            //New Audio Integration
   LPCRITICAL_SECTION pcsMemoryBuffer;

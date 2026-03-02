@@ -543,7 +543,7 @@ MMRESULT TextToSpeechStartupEx( LPTTS_HANDLE_T * pphTTS,
 				DWORD ,
 				VOID (*DtCallbackRoutine)(LONG,
 							  LONG,
-							  DWORD,
+							  LONG,
 							  UINT),
 				LONG );
 
@@ -552,7 +552,7 @@ MMRESULT TextToSpeechStartupExFonix( LPTTS_HANDLE_T * pphTTS,
 				DWORD ,
 				VOID (*DtCallbackRoutine)(LONG,
 							  LONG,
-							  DWORD,
+							  LONG,
 							  UINT),
 				LONG,
 #ifdef WIN32
@@ -568,7 +568,7 @@ MMRESULT TextToSpeechStartup( LPTTS_HANDLE_T * pphTTS,
 			      DWORD ,
 			      VOID (*DtCallbackRoutine)(LONG,
 							LONG,
-							DWORD,
+							LONG,
 							UINT),
 			      LONG );
 #endif
