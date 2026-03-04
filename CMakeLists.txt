@@ -3,6 +3,8 @@ project(dectalk)
 set(CMAKE_C_STANDARD 90)
 set(CMAKE_CXX_STANDARD 98)
 
+option(BUILD_SAMPLES "Enables building the sample binaries. This requires GTK on Unix systems." ON)
+
 # Set up the GNU install directories
 include(GNUInstallDirs)
 
